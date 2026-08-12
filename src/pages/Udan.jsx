@@ -7,49 +7,54 @@ const udanBooks = {
     title: "Udan 1",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 1.pdf",
-    desc: "Introductory academic book for first-year paramedical students. Covers basic medical terminology and ethics."
+    desc: ""
   },
   2: {
     title: "Udan 2",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 2.pdf",
-    desc: "Focuses on human anatomy and physiology fundamentals essential for healthcare education."
+    desc: ""
   },
   3: {
     title: "Udan 3",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 3.pdf",
-    desc: "Covers pathology basics, disease processes, and diagnostic concepts."
+   desc: ""
   },
   4: {
     title: "Udan 4",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 4.pdf",
-    desc: "Introduces clinical practices, patient care techniques, and hospital safety."
+    desc: ""
   },
   5: {
     title: "Udan 5",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 5.pdf",
-    desc: "Explains laboratory procedures and diagnostic equipment handling."
+     desc: ""
   },
   6: {
     title: "Udan 6",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 6.pdf",
-    desc: "Radiology fundamentals, X-ray principles, and imaging safety."
+    desc: ""
   },
   7: {
     title: "Udan 7",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 7.pdf",
-    desc: "Emergency care, first aid, trauma handling, and patient management."
-  },
+    desc: ""},
   8: {
     title: "Udan 8",
     cover: "/assets/books/udan.png",
     pdf: "/assets/books/Udan 8.pdf",
-    desc: "Professional ethics, hospital administration, and career readiness."
+    desc: ""
+  },
+  9: {
+    title: "Udan 9",
+    cover: "/assets/books/udan.png",
+    pdf: "/assets/books/Udan9.pdf",
+    desc: ""
   }
 };
 

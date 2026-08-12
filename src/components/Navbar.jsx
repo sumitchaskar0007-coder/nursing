@@ -39,7 +39,7 @@ const Navbar = () => {
     { path: '/contact', label: 'Contact' },
   ]
 
-  const udanLinks = Array.from({ length: 8 }, (_, i) => ({
+  const udanLinks = Array.from({ length: 9 }, (_, i) => ({
     path: `/udan/${i + 1}`,
     label: `Udan ${i + 1}`,
   }))
@@ -86,16 +86,18 @@ const Navbar = () => {
               <button className="flex items-center px-3 py-2 rounded-lg text-sm font-medium hover:text-primary hover:bg-neutral/10">
                 Udan <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
-                {udanLinks.map(link => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="block px-4 py-2 text-sm hover:bg-neutral/10 hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <div className="absolute left-0 top-full w-40 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition z-50">
+                <div className="bg-white rounded-lg shadow-lg border overflow-hidden">
+                  {udanLinks.map(link => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className="block px-4 py-2 text-sm hover:bg-neutral/10 hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -104,16 +106,18 @@ const Navbar = () => {
               <button className="flex items-center px-3 py-2 rounded-lg text-sm font-medium hover:text-primary hover:bg-neutral/10">
                 Campus <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
-                {campusLinks.map(link => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="block px-4 py-2 text-sm hover:bg-neutral/10 hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+              <div className="absolute left-0 top-full w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition z-50">
+                <div className="bg-white rounded-lg shadow-lg border overflow-hidden">
+                  {campusLinks.map(link => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className="block px-4 py-2 text-sm hover:bg-neutral/10 hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
