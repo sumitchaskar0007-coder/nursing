@@ -11,7 +11,8 @@ lerna-debug.log*
 node_modules/
 
 # Build output
-dist/
+# `dist` is intentionally committed because this host deploys the built site
+# directly from Git. HTML and its hashed JS/CSS bundles must be published together.
 dist-ssr/
 
 # Environment variables
