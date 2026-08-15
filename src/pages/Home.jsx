@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import NoticeTicker from '../components/NoticeTicker'
 import { Users, Hospital, Award, Briefcase, Star, Quote, Clock, UsersRound, ArrowRight, Download, X, Calendar, CheckCircle } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 
 const Home = () => {
   const [showImagePopup, setShowImagePopup] = useState(false)
@@ -13,50 +13,50 @@ const Home = () => {
   const [showWelcomePopup, setShowWelcomePopup] = useState(false)
 
   // Images with descriptions for the popup gallery
-  const galleryImages = [
+  const galleryImages = useMemo(() => [
     {
       id: 1,
-      src: "/assets/images/campus-1.jpg",
+      src: "/assets/images/nursing-campus.png",
       alt: "Jadhavar Institute Campus Front View",
       description: "Modern campus infrastructure with state-of-the-art facilities for nursing education",
       category: "Campus"
     },
     {
       id: 2,
-      src: "/assets/images/lab-1.jpg",
+      src: "/assets/images/nursing-lab.png",
       alt: "Nursing Simulation Lab",
       description: "Advanced nursing simulation lab equipped with latest medical training mannequins",
       category: "Labs"
     },
     {
       id: 3,
-      src: "/assets/images/classroom-1.jpg",
+      src: "/assets/images/clinical-training.png",
       alt: "Smart Classroom",
       description: "Technology-enabled smart classrooms for interactive learning",
       category: "Classrooms"
     },
     {
       id: 4,
-      src: "/assets/images/library-1.jpg",
+      src: "/assets/images/hero.png",
       alt: "Medical Library",
       description: "Well-stocked medical library with latest nursing journals and reference books",
       category: "Library"
     },
     {
       id: 5,
-      src: "/assets/images/clinical-1.jpg",
+      src: "/assets/images/clinical-training.png",
       alt: "Clinical Training Session",
       description: "Students receiving hands-on clinical training under expert supervision",
       category: "Training"
     },
     {
       id: 6,
-      src: "/assets/images/placement-1.jpg",
+      src: "/assets/images/placement.png",
       alt: "Campus Placement Drive",
       description: "Annual placement drive with top hospitals recruiting our nursing graduates",
       category: "Placements"
     }
-  ]
+  ], [])
 
   // Show welcome popup on every visit
   useEffect(() => {
@@ -92,19 +92,19 @@ const Home = () => {
     document.body.style.overflow = 'auto'
   }
 
-  const goToNextImage = () => {
+  const goToNextImage = useCallback(() => {
     const nextIndex = (currentImageIndex + 1) % galleryImages.length
     setCurrentImageIndex(nextIndex)
     setSelectedImage(galleryImages[nextIndex])
     setZoomLevel(1)
-  }
+  }, [currentImageIndex, galleryImages])
 
-  const goToPrevImage = () => {
+  const goToPrevImage = useCallback(() => {
     const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length
     setCurrentImageIndex(prevIndex)
     setSelectedImage(galleryImages[prevIndex])
     setZoomLevel(1)
-  }
+  }, [currentImageIndex, galleryImages])
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -127,7 +127,7 @@ const Home = () => {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [showImagePopup, showWelcomePopup, currentImageIndex])
+  }, [showImagePopup, showWelcomePopup, goToNextImage, goToPrevImage])
 
   const stats = [
     { icon: Users, value: '2000+', label: 'Nursing Students Trained' },
