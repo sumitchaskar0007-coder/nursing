@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
 const Navbar = () => {
@@ -29,6 +29,7 @@ const Navbar = () => {
     { path: '/facilities', label: 'Facilities' },
     { path: '/events', label: 'Events' },
     { path: '/gallery', label: 'Gallery' },
+    { path: '/videos', label: 'Videos' },
     { path: '/announcement', label: 'Announcement' },
     { path: '/blog', label: 'Blog' },
   ]
@@ -45,7 +46,7 @@ const Navbar = () => {
   }))
 
   return (
-    <motion.nav
+    <Motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -153,7 +154,7 @@ const Navbar = () => {
       {/* ================= MOBILE NAV ================= */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -200,10 +201,10 @@ const Navbar = () => {
                 Apply Now
               </Link>
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </Motion.nav>
   )
 }
 

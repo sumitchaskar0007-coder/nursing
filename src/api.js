@@ -62,6 +62,13 @@ export const galleryAPI = {
   delete: (id) => api.delete(`/gallery/${id}`),
 };
 
+export const videoAPI = {
+  getAll: () => api.get('/videos'),
+  create: (formData, config = {}) => api.post('/videos', formData, { ...config, headers: { ...config.headers, 'Content-Type': 'multipart/form-data' } }),
+  update: (id, formData, config = {}) => api.put(`/videos/${id}`, formData, { ...config, headers: { ...config.headers, 'Content-Type': 'multipart/form-data' } }),
+  delete: (id) => api.delete(`/videos/${id}`),
+};
+
 // ================= ANNOUNCEMENT API =================
 export const announcementAPI = {
   getAll: () => api.get("/announcements"),

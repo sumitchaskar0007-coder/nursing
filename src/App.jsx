@@ -22,6 +22,7 @@ import Departments from "./pages/Departments";
 import Facilities from "./pages/Facilities";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
+import Videos from "./pages/Videos";
 import Announcement from "./pages/Announcement";
 import Careers from "./pages/Careers";
 import Placements from "./pages/Placements";
@@ -40,6 +41,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import GalleryAdmin from "./pages/admin/GalleryAdmin";
+import VideoAdmin from "./pages/admin/VideoAdmin";
 import AnnouncementAdmin from "./pages/admin/AnnouncementAdmin";
 import CareerAdmin from "./pages/admin/CareerAdmin";
 
@@ -76,6 +78,7 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/events" element={<Events />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/videos" element={<Videos />} />
           <Route path="/announcement" element={<Announcement />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/placements" element={<Placements />} />
@@ -96,6 +99,7 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/gallery" element={<GalleryAdmin />} />
+            <Route path="/admin/videos" element={<VideoAdmin />} />
             <Route path="/admin/announcement" element={<AnnouncementAdmin />} />
             <Route path="/admin/career" element={<CareerAdmin />} />
             <Route path="/admin/private" element={<Private />} />

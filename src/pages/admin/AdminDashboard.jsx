@@ -20,6 +20,7 @@ import {
   ArrowBack as ArrowBackIcon,
   Lock as LockIcon,
   Article as ArticleIcon, // ✅ ADD THIS
+  VideoLibrary as VideoLibraryIcon,
 
 } from "@mui/icons-material";
 
@@ -45,6 +46,13 @@ const AdminDashboard = () => {
       icon: <ImageIcon fontSize="large" />,
       link: "/admin/gallery",
       color: "#1976d2",
+    },
+    {
+      title: "Video Management",
+      description: "Add, edit and remove uploaded or linked videos",
+      icon: <VideoLibraryIcon fontSize="large" />,
+      link: "/admin/videos",
+      color: "#00838f",
     },
     {
       title: "Announcements",
