@@ -238,7 +238,7 @@ const Admissions = () => {
                 },
                 {
                   title: "Fees",
-                  file: "/assets/pdf/fees.pdf"
+                  file: "/assets/pdf/finalfee.pdf"
                 },
                 {
                   title: "GNM Fee Structure",
